@@ -1,13 +1,12 @@
 <!-- ko if: isVisible() -->
 <div class="cs-checkout__newsletter-subscribe | checkout-newsletter-subscribe-block">
-    <div class="cs-input cs-input--type-checkbox">
-        <input class="cs-input__checkbox"
-               type="checkbox"
+    <div class="field choice">
+        <input type="checkbox"
                name="checkout-newsletter-subscribe"
                id="checkout-newsletter-subscribe"
                data-bind="checked: isChecked()"
         />
-        <label class="cs-input__label cs-input__label--long" for="checkout-newsletter-subscribe">
+        <label class="label" for="checkout-newsletter-subscribe">
             <span data-bind="i18n: label"></span>
         </label>
     </div>

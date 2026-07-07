@@ -26,7 +26,7 @@ class NewsletterSubscribe
         $cartId,
         $email,
         \Magento\Quote\Api\Data\PaymentInterface $paymentMethod,
-        \Magento\Quote\Api\Data\AddressInterface $billingAddress = null
+        ?\Magento\Quote\Api\Data\AddressInterface $billingAddress = null
     ) {
         $quote = $this->getQuote($cartId);
         $this->assignNewsletterFlag->execute($quote, $paymentMethod);
@@ -37,7 +37,7 @@ class NewsletterSubscribe
         $cartId,
         $email,
         \Magento\Quote\Api\Data\PaymentInterface $paymentMethod,
-        \Magento\Quote\Api\Data\AddressInterface $billingAddress = null
+        ?\Magento\Quote\Api\Data\AddressInterface $billingAddress = null
     ) {
         $quote = $this->getQuote($cartId);
         $this->assignNewsletterFlag->execute($quote, $paymentMethod);

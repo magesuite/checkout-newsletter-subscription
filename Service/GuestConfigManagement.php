@@ -43,22 +43,22 @@ class GuestConfigManagement implements \MageSuite\CheckoutNewsletterSubscription
     public function isVisibleForGuest(\Magento\Newsletter\Model\Subscriber $subscription): bool
     {
         if ($subscription->getStatus() == \Magento\Newsletter\Model\Subscriber::STATUS_SUBSCRIBED) {
-            return $this->configuration->isVisibleForSubscribedLoggedInCustomer();
+            return $this->configuration->isVisibleForSubscribedGuestCustomer();
         }
 
-        return $this->configuration->isVisibleForLoggedInCustomer();
+        return $this->configuration->isVisibleForGuestCustomer();
     }
 
     public function isCheckedForGuest(\Magento\Newsletter\Model\Subscriber $subscription): bool
     {
         if ($subscription->getStatus() == \Magento\Newsletter\Model\Subscriber::STATUS_UNSUBSCRIBED) {
-            return $this->configuration->isCheckedForUnsubscribedLoggedInCustomer();
+            return $this->configuration->isCheckedForUnsubscribedGuestCustomer();
         }
 
         if ($subscription->getStatus() == \Magento\Newsletter\Model\Subscriber::STATUS_NOT_ACTIVE) {
             return $this->configuration->isCheckedForNotActiveGuestCustomer();
         }
 
-        return $this->configuration->isCheckedByDefaultForLoggedInCustomer();
+        return $this->configuration->isCheckedByDefaultForGuestCustomer();
     }
 }
